@@ -1,0 +1,66 @@
+{
+	"compilerOptions": {
+		"lib": [
+			"ES2021",
+			"DOM",
+			"DOM.Iterable"
+		],
+		"target": "ES2020",
+		"useDefineForClassFields": true,
+		"module": "ESNext",
+		"skipLibCheck": true,
+		/* Bundler mode */
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react-jsx",
+		/* Linting */
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"paths": {
+			"~functions/*": [
+				"src/functions/*"
+			],
+			"~theme/*": [
+				"src/theme/*"
+			],
+			"~/*": [
+				"src/*"
+			],
+			"~app/*": [
+				"src/app/*"
+			],
+			"~component/*": [
+				"src/component/*"
+			],
+			"~client/*": [
+				"src/client/*"
+			],
+			"~page_materialMerge/*": [
+				"src/app/page_materialMerge/*"
+			],
+			"~page_materialEdit/*": [
+				"src/app/page_素材编辑/*"
+			],
+			"~core/*": [
+				"src/client/core/*"
+			],
+			"~page_material_auto_action/*": [
+				"src/app/page_素材自动操作/*"
+			]
+		},
+		"baseUrl": "./"
+	},
+	"include": [
+		"src"
+	],
+	"references": [
+		{
+			"path": "./tsconfig.node.json"
+		}
+	]
+}
