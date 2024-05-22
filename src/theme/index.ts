@@ -7,4 +7,5 @@ export const theme = extendTheme({
 	colorSchemes: extendColorSchemes,
 	typography: extendTypography,
 	components: components,
+	shape: { borderRadius: 12 },
 });
