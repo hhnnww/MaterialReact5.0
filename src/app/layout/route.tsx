@@ -1,15 +1,14 @@
-import { Container } from '~/component/box';
-import { Header } from './header';
+import { Box } from '@mui/material';
 import { Outlet } from 'react-router-dom';
+import { Header } from './header';
 
 export function Component() {
 	return (
 		<>
 			<Header />
-
-			<Container>
+			<Box p={5}>
 				<Outlet />
-			</Container>
+			</Box>
 		</>
 	);
 }

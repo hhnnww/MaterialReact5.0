@@ -4,23 +4,17 @@ import AutoAwesomeTwoToneIcon from '@mui/icons-material/AutoAwesomeTwoTone';
 import HomeMiniTwoToneIcon from '@mui/icons-material/HomeMiniTwoTone';
 import LayersTwoToneIcon from '@mui/icons-material/LayersTwoTone';
 import PaidTwoToneIcon from '@mui/icons-material/PaidTwoTone';
-import WbSunnyTwoToneIcon from '@mui/icons-material/WbSunnyTwoTone';
-import { Box, Button, Divider, Stack } from '@mui/material';
-import { useColorScheme } from '@mui/material/styles';
+import { AppBar, Button, Divider, Stack, Toolbar } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import { Container } from '~/component/box';
 
 export function Header() {
 	return (
 		<>
-			<Box py={4}>
-				<Container>
-					<Stack direction={'row'} justifyContent={'space-between'}>
-						<HeaderMenu />
-						<ChangeMode />
-					</Stack>
-				</Container>
-			</Box>
+			<AppBar position='static'>
+				<Toolbar>
+					<HeaderMenu />
+				</Toolbar>
+			</AppBar>
 			<Divider />
 		</>
 	);
@@ -72,45 +66,22 @@ export function HeaderMenu() {
 				{headerMenuList.map((item) => (
 					<Button
 						color={'inherit'}
-						sx={(theme) => ({
-							'padding': '5px 18px',
-							'&.active': {
-								backgroundColor:
-									theme.vars.palette.primary.main,
-								color: '#FFFFFF',
-								svg: {
-									opacity: 1,
-								},
-							},
-							'svg': { opacity: 0.5 },
-						})}
 						key={item.link}
 						component={NavLink}
 						startIcon={item.icon}
 						to={item.link}
+						sx={(theme) => ({
+							'padding': '3px 12px',
+							'&.active': {
+								backgroundColor:
+									theme.vars.palette.primary.main,
+							},
+						})}
 					>
 						{item.name}
 					</Button>
 				))}
 			</Stack>
-		</>
-	);
-}
-
-export function ChangeMode() {
-	const { mode, setMode } = useColorScheme();
-
-	return (
-		<>
-			<Button
-				onClick={() => {
-					setMode(mode === 'light' ? 'dark' : 'light');
-				}}
-				color='inherit'
-				startIcon={<WbSunnyTwoToneIcon />}
-			>
-				ChangeMode
-			</Button>
 		</>
 	);
 }

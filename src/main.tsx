@@ -20,7 +20,11 @@ document.title = '超级素材处理程序 5.0';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
-		<CssVarsProvider theme={theme}>
+		<CssVarsProvider
+			theme={theme}
+			defaultMode='dark'
+			defaultColorScheme={'dark'}
+		>
 			<CssBaseline />
 			<RouterProvider router={router} />
 		</CssVarsProvider>

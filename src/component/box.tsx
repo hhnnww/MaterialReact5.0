@@ -5,7 +5,7 @@ import { ReactNode } from 'react';
 export function GridHeader(props: { title: string }) {
 	return (
 		<>
-			<Grid xs={12} mt={3}>
+			<Grid xs={12}>
 				<Typography pl={0.5}>{props.title}</Typography>
 			</Grid>
 		</>
@@ -15,7 +15,7 @@ export function GridHeader(props: { title: string }) {
 export function Container(props: { children?: ReactNode }) {
 	return (
 		<>
-			<Box px={5}>{props.children}</Box>
+			<Box>{props.children}</Box>
 		</>
 	);
 }

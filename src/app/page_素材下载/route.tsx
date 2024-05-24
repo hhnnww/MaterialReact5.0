@@ -37,7 +37,7 @@ export function Component() {
 
 	return (
 		<>
-			<Grid2 spacing={2} container>
+			<Grid2 spacing={3} container>
 				<Fun_选择面板 />
 				<Fun_素材采集面板 />
 				<Fun_翻页面板 />

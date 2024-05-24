@@ -26,7 +26,7 @@ export function Component() {
 	];
 
 	return (
-		<Grid2 container sx={{ mt: 6 }} spacing={3}>
+		<Grid2 container spacing={3}>
 			{content_list.map((item) => (
 				<Grid2 xs={4} key={item.name}>
 					<TextField
