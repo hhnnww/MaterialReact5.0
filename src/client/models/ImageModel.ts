@@ -5,6 +5,6 @@
 
 export type ImageModel = {
     path: string;
-    ratio?: number;
-    isSelected?: boolean;
+    ratio?: (number | null);
+    isSelected?: (boolean | null);
 };

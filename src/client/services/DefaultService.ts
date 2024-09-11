@@ -49,6 +49,27 @@ img: string,
     }
 
     /**
+     * Get Thumbnail
+     * @param imgPath 
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    public static getThumbnailV1BlobThumbnailGet(
+imgPath: string,
+): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/v1/blob/thumbnail',
+            query: {
+                'img_path': imgPath,
+            },
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+
+    /**
      * Get Material Info
      * @param requestBody 
      * @returns MaterialInfo Successful Response

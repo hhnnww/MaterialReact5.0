@@ -50,7 +50,7 @@ export function FirstImageModel() {
 							}
 							label='首图样式'
 						>
-							{['T500', '黑鲸'].map((item) => (
+							{['T500', '黑鲸', '泡泡', '无样式'].map((item) => (
 								<MenuItem key={item} value={item}>
 									{item}
 								</MenuItem>
@@ -97,6 +97,9 @@ export function FirstImageModel() {
 							{[
 								'固定裁剪',
 								'自适应裁剪',
+								'竖橫竖竖',
+								'3列横竖错落',
+								'3列1大横竖错落',
 								'1-2',
 								'1-3',
 								'1-4',
@@ -225,6 +228,8 @@ export function FirstImageModel() {
 									source_format:
 										store.material_info
 											.material_source_format,
+									source_count:
+										store.material_info.material_source_file_count.toString(),
 								},
 							);
 						}}

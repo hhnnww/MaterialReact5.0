@@ -72,6 +72,7 @@ export function Fun_制作详情() {
 							material_parent_path: store.parent_path,
 							start_item: store.start_stem,
 							shop_name: store.shop_name,
+							make_effect: true,
 						});
 					}}
 				>
