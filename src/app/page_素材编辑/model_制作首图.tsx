@@ -50,11 +50,13 @@ export function FirstImageModel() {
 							}
 							label='首图样式'
 						>
-							{['T500', '黑鲸', '泡泡', '无样式'].map((item) => (
-								<MenuItem key={item} value={item}>
-									{item}
-								</MenuItem>
-							))}
+							{['T500', '黑鲸', '黑鲸高', '泡泡', '无样式'].map(
+								(item) => (
+									<MenuItem key={item} value={item}>
+										{item}
+									</MenuItem>
+								),
+							)}
 						</Select>
 					</FormControl>
 				</Grid2>

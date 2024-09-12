@@ -6,7 +6,7 @@ import { ViteAliases } from 'vite-aliases';
 export default defineConfig({
 	plugins: [react(), ViteAliases()],
 	build: {
-		outDir: 'C:\\Users\\aimlo\\codeProject\\MaterialEditPython50\\static',
+		outDir: 'F:\\codeProject\\MaterialEditPython50\\static',
 		emptyOutDir: true,
 	},
 	base: './',
