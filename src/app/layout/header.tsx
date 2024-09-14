@@ -10,8 +10,8 @@ import { NavLink } from 'react-router-dom';
 export function Header() {
 	return (
 		<>
-			<AppBar position='static'>
-				<Toolbar>
+			<AppBar position='static' elevation={0}>
+				<Toolbar variant='regular'>
 					<HeaderMenu />
 				</Toolbar>
 			</AppBar>

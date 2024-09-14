@@ -22,12 +22,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
 		<CssVarsProvider
 			theme={theme}
-			defaultMode='dark'
-			defaultColorScheme={'dark'}
+			defaultMode='light'
+			defaultColorScheme={'light'}
 		>
 			<CssBaseline />
 			<RouterProvider router={router} />
 		</CssVarsProvider>
 	</React.StrictMode>,
 );
-

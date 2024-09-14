@@ -70,6 +70,9 @@ export const components: CssVarsThemeOptions['components'] = {
 				fontWeight: 'bold',
 			},
 		},
+		defaultProps: {
+			disableElevation: true,
+		},
 	},
 
 	MuiTypography: {

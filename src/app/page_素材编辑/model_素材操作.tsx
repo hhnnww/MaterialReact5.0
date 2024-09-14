@@ -79,6 +79,13 @@ export function MaterialPathActionModel() {
 		{
 			color: 'primary',
 			list: [
+				{ name: '子目录PSD重命名', icon: <EditRoadOutlinedIcon /> },
+				{ name: '子目录图片重命名', icon: <EditRoadOutlinedIcon /> },
+			],
+		},
+		{
+			color: 'primary',
+			list: [
 				{
 					name: '复制图片到预览图',
 					icon: <PhotoSizeSelectLargeOutlinedIcon />,
