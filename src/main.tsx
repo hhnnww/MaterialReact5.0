@@ -18,6 +18,10 @@ if (import.meta.env.MODE === 'development') {
 
 document.title = '超级素材处理程序 5.0';
 
+localStorage.setItem('mui-mode', 'light');
+localStorage.setItem('mui-color-scheme-light', 'light');
+localStorage.setItem('mui-color-scheme-dark', 'light');
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
 		<CssVarsProvider

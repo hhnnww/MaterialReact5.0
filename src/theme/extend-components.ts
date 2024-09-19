@@ -75,6 +75,12 @@ export const components: CssVarsThemeOptions['components'] = {
 		},
 	},
 
+	MuiButtonGroup: {
+		defaultProps: {
+			disableElevation: true,
+		},
+	},
+
 	MuiTypography: {
 		styleOverrides: {
 			body2: {

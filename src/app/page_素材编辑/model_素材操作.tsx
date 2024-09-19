@@ -81,6 +81,7 @@ export function MaterialPathActionModel() {
 			list: [
 				{ name: '子目录PSD重命名', icon: <EditRoadOutlinedIcon /> },
 				{ name: '子目录图片重命名', icon: <EditRoadOutlinedIcon /> },
+				{ name: '子目录拼接图片', icon: <EditRoadOutlinedIcon /> },
 			],
 		},
 		{
