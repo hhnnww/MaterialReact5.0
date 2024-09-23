@@ -104,6 +104,8 @@ export function MaterialPathActionModel() {
 					icon: <EditRoadOutlinedIcon />,
 				},
 				{ name: '删除图片边框', icon: <EditRoadOutlinedIcon /> },
+				{ name: '效果图蜘蛛水印', icon: <EditRoadOutlinedIcon /> },
+				{ name: '效果图扩大', icon: <EditRoadOutlinedIcon /> },
 			],
 		},
 		{

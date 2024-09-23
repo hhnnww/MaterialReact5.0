@@ -50,13 +50,18 @@ export function FirstImageModel() {
 							}
 							label='首图样式'
 						>
-							{['T500', '黑鲸', '黑鲸高', '泡泡', '无样式'].map(
-								(item) => (
-									<MenuItem key={item} value={item}>
-										{item}
-									</MenuItem>
-								),
-							)}
+							{[
+								'T500',
+								'黑鲸',
+								'黑鲸高',
+								'黑鲸笔刷',
+								'泡泡',
+								'无样式',
+							].map((item) => (
+								<MenuItem key={item} value={item}>
+									{item}
+								</MenuItem>
+							))}
 						</Select>
 					</FormControl>
 				</Grid2>
@@ -99,7 +104,10 @@ export function FirstImageModel() {
 							{[
 								'固定裁剪',
 								'自适应裁剪',
-								'列自适应',
+								'列-自适应',
+								'列-固定尺寸',
+								'1大N行-自适应',
+								'1竖-2排小竖-自适应',
 								'竖橫竖竖',
 								'3列横竖错落',
 								'3列1大横竖错落',
@@ -112,7 +120,6 @@ export function FirstImageModel() {
 								'S1-3',
 								'1大2行2列',
 								'1大3行2列',
-								'1大N行',
 								'错乱-固定裁剪',
 								'错乱-全自动',
 								'错乱-3-4',
