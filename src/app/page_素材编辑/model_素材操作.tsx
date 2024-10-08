@@ -82,6 +82,7 @@ export function MaterialPathActionModel() {
 				{ name: '子目录PSD重命名', icon: <EditRoadOutlinedIcon /> },
 				{ name: '子目录图片重命名', icon: <EditRoadOutlinedIcon /> },
 				{ name: '子目录拼接图片', icon: <EditRoadOutlinedIcon /> },
+				{ name: '目录内放置广告', icon: <EditRoadOutlinedIcon /> },
 			],
 		},
 		{
@@ -106,6 +107,8 @@ export function MaterialPathActionModel() {
 				{ name: '删除图片边框', icon: <EditRoadOutlinedIcon /> },
 				{ name: '效果图蜘蛛水印', icon: <EditRoadOutlinedIcon /> },
 				{ name: '效果图扩大', icon: <EditRoadOutlinedIcon /> },
+				{ name: '效果图webp转png', icon: <EditRoadOutlinedIcon /> },
+				{ name: 'eps转ai', icon: <EditRoadOutlinedIcon /> },
 			],
 		},
 		{

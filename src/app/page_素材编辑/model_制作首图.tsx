@@ -79,7 +79,7 @@ export function FirstImageModel() {
 								})
 							}
 						>
-							{[1, 2, 3, 4, 5, 6, 7].map((item) => (
+							{[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
 								<MenuItem key={item} value={item}>
 									{item}
 								</MenuItem>
@@ -106,11 +106,18 @@ export function FirstImageModel() {
 								'自适应裁剪',
 								'列-自适应',
 								'列-固定尺寸',
+								'行-自适应',
+								'行-固定尺寸',
 								'1大N行-自适应',
 								'1竖-2排小竖-自适应',
+								'1大3小-自适应',
 								'竖橫竖竖',
 								'3列横竖错落',
 								'3列1大横竖错落',
+								'2大竖-4小竖',
+								'超长图',
+								'背景图',
+								'小元素排列',
 								'1-2',
 								'1-3',
 								'1-4',
@@ -174,6 +181,7 @@ export function FirstImageModel() {
 						>
 							<MenuItem value={0}>无间距</MenuItem>
 							<MenuItem value={10}>包含间距</MenuItem>
+							<MenuItem value={60}>大间距</MenuItem>
 						</Select>
 					</FormControl>
 				</Grid2>
@@ -200,6 +208,19 @@ export function FirstImageModel() {
 					</FormControl>
 				</Grid2>
 
+				<Grid2 xs={2}>
+					<TextField
+						value={store.first_image_set.bg_color}
+						onChange={(event) => {
+							useMaterialEditStore.setState((state) => {
+								state.first_image_set.bg_color =
+									event.target.value;
+							});
+						}}
+						label='背景颜色'
+					/>
+				</Grid2>
+
 				<Grid2 xs={12}>
 					<Button
 						onClick={async () => {
@@ -216,6 +237,7 @@ export function FirstImageModel() {
 							// });
 							await DefaultService.makeFirstImageV1MakeFirstImagePost(
 								{
+									bg_color: store.first_image_set.bg_color,
 									first_image_title:
 										store.first_image_set.first_image_title,
 									first_image_line:

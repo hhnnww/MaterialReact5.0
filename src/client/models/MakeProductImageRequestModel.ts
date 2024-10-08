@@ -22,7 +22,8 @@ export type MakeProductImageRequestModel = {
     preview_image_count: number;
     crop_position: MakeProductImageRequestModel.crop_position;
     xq_width: number;
-    save_sub_path?: boolean;
+    image_name_has_material_id?: boolean;
+    clear_upload_path?: boolean;
 };
 
 export namespace MakeProductImageRequestModel {

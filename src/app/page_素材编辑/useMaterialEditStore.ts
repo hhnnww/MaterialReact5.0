@@ -1,6 +1,6 @@
+import { mountStoreDevtool } from 'simple-zustand-devtools';
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
-import { mountStoreDevtool } from 'simple-zustand-devtools';
 
 export interface PathObj {
 	path: string;
@@ -47,6 +47,8 @@ export const useMaterialEditStore = create(
 			crop_position: 'center',
 			first_image_num: '1',
 			spacing: 10,
+
+			bg_color: '255 255 255 255',
 		},
 
 		product_image_set: {

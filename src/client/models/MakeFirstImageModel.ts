@@ -19,6 +19,7 @@ export type MakeFirstImageModel = {
     shop_name: string;
     source_format: string;
     source_count: string;
+    bg_color: string;
 };
 
 export namespace MakeFirstImageModel {
