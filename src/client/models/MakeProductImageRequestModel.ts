@@ -24,6 +24,7 @@ export type MakeProductImageRequestModel = {
     xq_width: number;
     image_name_has_material_id?: boolean;
     clear_upload_path?: boolean;
+    has_water: number;
 };
 
 export namespace MakeProductImageRequestModel {

@@ -49,6 +49,7 @@ export const useMaterialEditStore = create(
 			spacing: 10,
 
 			bg_color: '255 255 255 255',
+			out_space: 0,
 		},
 
 		product_image_set: {
@@ -62,6 +63,7 @@ export const useMaterialEditStore = create(
 			preview_has_material_info: 1,
 			crop_position: 'start',
 			xq_width: 1500,
+			has_water: 1,
 		},
 	})),
 );

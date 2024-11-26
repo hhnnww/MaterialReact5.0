@@ -92,7 +92,17 @@ export function ProductImageModel() {
 			],
 			type: 'number',
 		},
+		{
+			label: '详情是否添加水印',
+			key: 'has_water',
+			menus: [
+				{ key: '添加水印', value: 1 },
+				{ key: '无水印', value: 0 },
+			],
+			type: 'number',
+		},
 	];
+
 	return (
 		<>
 			<Grid2 container spacing={2}>
@@ -197,6 +207,7 @@ function MakeProductImageButton() {
 								store.product_image_set.preview_used_number,
 							shop_name: store.shop_name,
 							xq_width: store.product_image_set.xq_width,
+							has_water: store.product_image_set.has_water,
 						},
 					);
 				}}

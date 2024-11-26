@@ -20,6 +20,7 @@ export type MakeFirstImageModel = {
     source_format: string;
     source_count: string;
     bg_color: string;
+    out_space: number;
 };
 
 export namespace MakeFirstImageModel {

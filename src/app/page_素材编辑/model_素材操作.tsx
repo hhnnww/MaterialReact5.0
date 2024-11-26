@@ -83,6 +83,10 @@ export function MaterialPathActionModel() {
 				{ name: '子目录图片重命名', icon: <EditRoadOutlinedIcon /> },
 				{ name: '子目录拼接图片', icon: <EditRoadOutlinedIcon /> },
 				{ name: '目录内放置广告', icon: <EditRoadOutlinedIcon /> },
+				{
+					name: 'AI批量导出图片重命名',
+					icon: <EditRoadOutlinedIcon />,
+				},
 			],
 		},
 		{
@@ -133,6 +137,10 @@ export function MaterialPathActionModel() {
 				},
 				{
 					name: 'AI-导出图片',
+					icon: <AddPhotoAlternateOutlinedIcon />,
+				},
+				{
+					name: 'PPT-删除备注',
 					icon: <AddPhotoAlternateOutlinedIcon />,
 				},
 				{

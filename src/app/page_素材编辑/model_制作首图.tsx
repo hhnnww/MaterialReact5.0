@@ -53,7 +53,7 @@ export function FirstImageModel() {
 							{[
 								'T500',
 								'黑鲸',
-								'黑鲸高',
+								// '黑鲸高',
 								'黑鲸笔刷',
 								'泡泡',
 								'无样式',
@@ -118,6 +118,8 @@ export function FirstImageModel() {
 								'超长图',
 								'背景图',
 								'小元素排列',
+								'横版-1221',
+								'竖版-1221',
 								'1-2',
 								'1-3',
 								'1-4',
@@ -181,7 +183,7 @@ export function FirstImageModel() {
 						>
 							<MenuItem value={0}>无间距</MenuItem>
 							<MenuItem value={10}>包含间距</MenuItem>
-							<MenuItem value={60}>大间距</MenuItem>
+							<MenuItem value={20}>大间距</MenuItem>
 						</Select>
 					</FormControl>
 				</Grid2>
@@ -219,6 +221,26 @@ export function FirstImageModel() {
 						}}
 						label='背景颜色'
 					/>
+				</Grid2>
+
+				<Grid2 xs={2}>
+					<FormControl>
+						<InputLabel>是否包含外边距</InputLabel>
+						<Select
+							label='是否包含外边距'
+							value={store.first_image_set.out_space}
+							onChange={(event) =>
+								useMaterialEditStore.setState((state) => {
+									state.first_image_set.out_space = event
+										.target.value as number;
+								})
+							}
+							type='number'
+						>
+							<MenuItem value={1}>包含外边距</MenuItem>
+							<MenuItem value={0}>不包含外边距</MenuItem>
+						</Select>
+					</FormControl>
 				</Grid2>
 
 				<Grid2 xs={12}>
@@ -265,6 +287,7 @@ export function FirstImageModel() {
 											.material_source_format,
 									source_count:
 										store.material_info.material_source_file_count.toString(),
+									out_space: store.first_image_set.out_space,
 								},
 							);
 						}}
