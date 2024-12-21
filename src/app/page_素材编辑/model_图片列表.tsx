@@ -1,11 +1,11 @@
-import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded';
-import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
-import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
-import RadioButtonCheckedRoundedIcon from '@mui/icons-material/RadioButtonCheckedRounded';
-import { Box, Button, ButtonGroup, Stack } from '@mui/material';
-import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { GridHeader } from '~/component/box';
+import ExpandLessRoundedIcon from "@mui/icons-material/ExpandLessRounded";
+import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
+import HighlightOffOutlinedIcon from "@mui/icons-material/HighlightOffOutlined";
+import RadioButtonCheckedRoundedIcon from "@mui/icons-material/RadioButtonCheckedRounded";
+import { Box, Button, ButtonGroup, Stack } from "@mui/material";
+import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { GridHeader } from "~/component/box";
 import {
 	clearSelect,
 	getImageRatio,
@@ -13,9 +13,9 @@ import {
 	selectSingleImage,
 	sortAllImageByNmae,
 	sortAllImageBySize,
-} from '~functions/imageListAction';
+} from "~functions/imageListAction";
 // import Path from '~functions/pathlib';
-import { useMaterialEditStore, type PathObj } from './useMaterialEditStore';
+import { type PathObj, useMaterialEditStore } from "./useMaterialEditStore";
 
 export function ImageListModel() {
 	const store = useMaterialEditStore();
@@ -25,14 +25,11 @@ export function ImageListModel() {
 			<Grid2
 				container
 				spacing={2}
-				alignItems={'end'}
-				sx={{ marginBottom: '200px' }}
+				alignItems={"end"}
+				sx={{ marginBottom: "200px" }}
 			>
 				<GridHeader
-					title={
-						'效果图列表 已选择: ' +
-						store.selected_image.length.toString()
-					}
+					title={`效果图列表 已选择: ${store.selected_image.length.toString()}`}
 				/>
 				<ImageAction />
 				{store.material_info.effect_image_list.map((item) => (
@@ -42,10 +39,7 @@ export function ImageListModel() {
 				))}
 
 				<GridHeader
-					title={
-						'预览图列表 已选择: ' +
-						store.selected_image.length.toString()
-					}
+					title={`预览图列表 已选择: ${store.selected_image.length.toString()}`}
 				/>
 				{store.material_info.preview_image_list.map((item) => (
 					<Grid2 key={item.path} xs={2}>
@@ -66,9 +60,9 @@ function SingleImage(props: { img_obj: PathObj }) {
 				<Box
 					sx={(theme) => ({
 						img: {
-							width: '100%',
-							padding: '15px',
-							cursor: 'pointer',
+							width: "100%",
+							padding: "15px",
+							cursor: "pointer",
 						},
 						backgroundColor: `${
 							props.img_obj.isSelected
@@ -82,24 +76,22 @@ function SingleImage(props: { img_obj: PathObj }) {
 						onLoad={() => getImageRatio(props.img_obj)}
 						onClick={() => selectSingleImage(props.img_obj)}
 						src={store.img_server_url + props.img_obj.path}
-						placeholderSrc={''}
+						placeholderSrc={""}
 						threshold={100}
 					/>
 
 					<Stack
 						px={2.5}
-						direction={'column'}
-						justifyContent={'space-between'}
-						alignItems={'left'}
-						sx={{ fontSize: '13px' }}
+						direction={"column"}
+						justifyContent={"space-between"}
+						alignItems={"left"}
+						sx={{ fontSize: "13px" }}
 						spacing={1}
 					>
 						<Box>{props.img_obj.path}</Box>
 						<Box>
 							{(
-								Math.round(
-									(props.img_obj.ratio as number) * 100,
-								) / 100
+								Math.round((props.img_obj.ratio as number) * 100) / 100
 							).toString()}
 						</Box>
 					</Stack>
@@ -113,8 +105,8 @@ function ImageAction() {
 	return (
 		<>
 			<Grid2 xs={12}>
-				<Stack direction={'row'} alignItems={'center'} spacing={2}>
-					<ButtonGroup variant='contained'>
+				<Stack direction={"row"} alignItems={"center"} spacing={2}>
+					<ButtonGroup variant="contained">
 						<Button
 							startIcon={<RadioButtonCheckedRoundedIcon />}
 							onClick={selectAllImage}
@@ -129,7 +121,7 @@ function ImageAction() {
 						</Button>
 					</ButtonGroup>
 
-					<ButtonGroup variant='contained'>
+					<ButtonGroup variant="contained">
 						<Button
 							onClick={() => sortAllImageByNmae(true)}
 							startIcon={<ExpandMoreRoundedIcon />}
@@ -144,7 +136,7 @@ function ImageAction() {
 						</Button>
 					</ButtonGroup>
 
-					<ButtonGroup variant='contained'>
+					<ButtonGroup variant="contained">
 						<Button
 							onClick={() => sortAllImageBySize(false)}
 							startIcon={<ExpandMoreRoundedIcon />}

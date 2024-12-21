@@ -1,6 +1,6 @@
-import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
-import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
-import AutoFixHighOutlinedIcon from '@mui/icons-material/AutoFixHighOutlined';
+import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
+import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
+import AutoFixHighOutlinedIcon from "@mui/icons-material/AutoFixHighOutlined";
 import {
 	Autocomplete,
 	Button,
@@ -11,14 +11,14 @@ import {
 	Select,
 	Stack,
 	TextField,
-} from '@mui/material';
-import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
-import { GridHeader } from '~/component/box';
-import { get_material_info } from '~functions/getMaterialInfo';
-import Path from '~functions/pathlib';
-import { useAppStore } from '../useAppStore';
-import { useMaterialEditStore } from './useMaterialEditStore';
-import { useRootPathStore } from './useRootPathList';
+} from "@mui/material";
+import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+import { GridHeader } from "~/component/box";
+import { get_material_info } from "~functions/getMaterialInfo";
+import Path from "~functions/pathlib";
+import { useAppStore } from "../useAppStore";
+import { useMaterialEditStore } from "./useMaterialEditStore";
+import { useRootPathStore } from "./useRootPathList";
 
 export function RootPathModel() {
 	return (
@@ -38,54 +38,50 @@ function GetMaterialInfoButton() {
 	const store = useMaterialEditStore();
 
 	const current_stem = new Path(store.root_path).stem;
-	let next_stem = '';
-	let prev_stem = '';
+	let next_stem = "";
+	let prev_stem = "";
 
-	if (parseInt(current_stem.substring(1))) {
+	if (Number.parseInt(current_stem.substring(1))) {
 		next_stem =
 			current_stem[0] +
-			(parseInt(current_stem.substring(1)) + 1).toString();
+			(Number.parseInt(current_stem.substring(1)) + 1).toString();
 		prev_stem =
 			current_stem[0] +
-			(parseInt(current_stem.substring(1)) - 1).toString();
+			(Number.parseInt(current_stem.substring(1)) - 1).toString();
 
 		while (next_stem.length < current_stem.length) {
-			next_stem = next_stem[0] + '0' + next_stem.substring(1);
+			next_stem = `${next_stem[0]}0${next_stem.substring(1)}`;
 		}
 
 		while (prev_stem.length < current_stem.length) {
-			prev_stem = prev_stem[0] + '0' + prev_stem.substring(1);
+			prev_stem = `${prev_stem[0]}0${prev_stem.substring(1)}`;
 		}
 	}
 
 	return (
 		<>
 			<Grid2 xs={12}>
-				<Stack direction={'row'} alignItems={'center'} spacing={2}>
+				<Stack direction={"row"} alignItems={"center"} spacing={2}>
 					<Button
 						startIcon={<AutoFixHighOutlinedIcon />}
 						onClick={get_material_info}
-						variant='contained'
+						variant="contained"
 					>
 						获取素材信息
 					</Button>
 
-					{store.root_path !== '' &&
-						store.shop_name !== '' &&
-						prev_stem !== '' &&
-						next_stem !== '' && (
-							<ButtonGroup variant='contained'>
+					{store.root_path !== "" &&
+						store.shop_name !== "" &&
+						prev_stem !== "" &&
+						next_stem !== "" && (
+							<ButtonGroup variant="contained">
 								<Button
 									onClick={() =>
-										useMaterialEditStore.setState(
-											(state) => {
-												state.root_path =
-													new Path(state.root_path)
-														.parent.path +
-													'/' +
-													prev_stem;
-											},
-										)
+										useMaterialEditStore.setState((state) => {
+											state.root_path = `${
+												new Path(state.root_path).parent.path
+											}/${prev_stem}`;
+										})
 									}
 									startIcon={<ArrowBackRoundedIcon />}
 								>
@@ -94,15 +90,11 @@ function GetMaterialInfoButton() {
 								<Button>{current_stem}</Button>
 								<Button
 									onClick={() =>
-										useMaterialEditStore.setState(
-											(state) => {
-												state.root_path =
-													new Path(state.root_path)
-														.parent.path +
-													'/' +
-													next_stem;
-											},
-										)
+										useMaterialEditStore.setState((state) => {
+											state.root_path = `${
+												new Path(state.root_path).parent.path
+											}/${next_stem}`;
+										})
 									}
 									endIcon={<ArrowForwardRoundedIcon />}
 								>
@@ -121,14 +113,12 @@ function PreviewImageNumber() {
 		<>
 			<Grid2 xs={2}>
 				<TextField
-					label='获取图片数量 0为全部获取'
-					type='number'
+					label="获取图片数量 0为全部获取"
+					type="number"
 					value={store.get_preview_number}
 					onChange={(event) =>
 						useMaterialEditStore.setState((state) => {
-							state.get_preview_number = parseInt(
-								event.target.value,
-							);
+							state.get_preview_number = Number.parseInt(event.target.value);
 						})
 					}
 					inputProps={{ step: 10, min: 0 }}
@@ -146,7 +136,7 @@ function PreviewImageSort() {
 				<FormControl>
 					<InputLabel>获取的图片排序方式</InputLabel>
 					<Select
-						label='获取的图片排序方式'
+						label="获取的图片排序方式"
 						value={store.get_preview_sort ? 1 : 0}
 						onChange={(event) =>
 							useMaterialEditStore.setState((state) => {
@@ -176,7 +166,7 @@ function ShopNameInput() {
 				<FormControl>
 					<InputLabel>店铺选择</InputLabel>
 					<Select
-						label='店铺选择'
+						label="店铺选择"
 						value={store.shop_name}
 						onChange={(event) =>
 							useMaterialEditStore.setState((state) => {
@@ -208,7 +198,7 @@ function RootPathInput() {
 
 	return (
 		<>
-			<GridHeader title='素材输入' />
+			<GridHeader title="素材输入" />
 			<Grid2 xs={6}>
 				<Autocomplete
 					value={store.root_path}
@@ -228,9 +218,7 @@ function RootPathInput() {
 						) as AutocompleteOption[]
 					}
 					freeSolo
-					renderInput={(params) => (
-						<TextField label='素材根目录' {...params} />
-					)}
+					renderInput={(params) => <TextField label="素材根目录" {...params} />}
 				/>
 			</Grid2>
 		</>

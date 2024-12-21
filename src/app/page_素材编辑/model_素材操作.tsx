@@ -74,6 +74,14 @@ export function MaterialPathActionModel() {
 					name: '打开所有子文件夹',
 					icon: <PhotoSizeSelectLargeOutlinedIcon />,
 				},
+				{
+					name: '打开没有预览图的AI文件',
+					icon: <PhotoSizeSelectLargeOutlinedIcon />,
+				},
+				{
+					name: '打开没有预览图的PSD文件',
+					icon: <PhotoSizeSelectLargeOutlinedIcon />,
+				},
 			],
 		},
 		{
@@ -85,6 +93,18 @@ export function MaterialPathActionModel() {
 				{ name: '目录内放置广告', icon: <EditRoadOutlinedIcon /> },
 				{
 					name: 'AI批量导出图片重命名',
+					icon: <EditRoadOutlinedIcon />,
+				},
+				{
+					name: '生成SKP导出命令',
+					icon: <EditRoadOutlinedIcon />,
+				},
+				{
+					name: '打开没有预览图的SKP',
+					icon: <EditRoadOutlinedIcon />,
+				},
+				{
+					name: 'AI导出效果图改名',
 					icon: <EditRoadOutlinedIcon />,
 				},
 			],
@@ -145,6 +165,10 @@ export function MaterialPathActionModel() {
 				},
 				{
 					name: 'PPT-导出图片',
+					icon: <AddPhotoAlternateOutlinedIcon />,
+				},
+				{
+					name: '打开没有预览图的PPT',
 					icon: <AddPhotoAlternateOutlinedIcon />,
 				},
 			],

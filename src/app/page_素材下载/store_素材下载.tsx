@@ -1,23 +1,23 @@
-import { createJSONStorage, persist } from 'zustand/middleware';
+import { createJSONStorage, persist } from "zustand/middleware";
 
-import { create } from 'zustand';
-import { immer } from 'zustand/middleware/immer';
+import { create } from "zustand";
+import { immer } from "zustand/middleware/immer";
 
 export const useMaterialDownStore = create(
 	persist(
 		immer(() => ({
-			shop_name: '',
-			material_site: '',
-			down_path: 'F:\\DOWN',
+			shop_name: "",
+			material_site: "",
+			down_path: "F:\\DOWN",
 
-			scrapy_url: '',
+			scrapy_url: "",
 			scrapy_num: 1,
-			cookie: '',
+			cookie: "",
 
 			page: 1,
 		})),
 		{
-			name: 'down_store',
+			name: "down_store",
 			storage: createJSONStorage(() => sessionStorage),
 		},
 	),

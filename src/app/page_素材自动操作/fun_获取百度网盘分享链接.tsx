@@ -21,7 +21,7 @@ export function Fun_获取网盘链接() {
 						name='start_stem'
 						onChange={(event) => {
 							setStore((draft) => {
-								draft.start_stem = parseInt(event.target.value);
+								draft.start_stem = Number.parseInt(event.target.value);
 							});
 						}}
 						type='number'
@@ -34,7 +34,7 @@ export function Fun_获取网盘链接() {
 						name='end_stem'
 						onChange={(event) => {
 							setStore((draft) => {
-								draft.end_stem = parseInt(event.target.value);
+								draft.end_stem = Number.parseInt(event.target.value);
 							});
 						}}
 						type='number'
