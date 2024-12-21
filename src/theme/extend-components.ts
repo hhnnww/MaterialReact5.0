@@ -1,10 +1,10 @@
-import { type CssVarsThemeOptions } from '@mui/material';
+import type { CssVarsThemeOptions } from "@mui/material";
 
-export const components: CssVarsThemeOptions['components'] = {
+export const components: CssVarsThemeOptions["components"] = {
 	MuiCssBaseline: {
 		styleOverrides: {
 			body: {
-				FontFamily: ['Montserrat', 'sans-serif'].join(','),
+				FontFamily: ["Montserrat", "sans-serif"].join(","),
 				fontWeight: 400,
 			},
 		},
@@ -13,15 +13,15 @@ export const components: CssVarsThemeOptions['components'] = {
 	MuiCardHeader: {
 		styleOverrides: {
 			title: {
-				fontSize: '1.1rem',
-				fontWeight: 'bold',
+				fontSize: "1.1rem",
+				fontWeight: "bold",
 			},
 		},
 	},
 
 	MuiTextField: {
 		defaultProps: {
-			variant: 'filled',
+			variant: "filled",
 			fullWidth: true,
 		},
 	},
@@ -29,37 +29,37 @@ export const components: CssVarsThemeOptions['components'] = {
 	MuiFilledInput: {
 		styleOverrides: {
 			input: ({ theme }) => ({
-				'borderRadius': theme.vars.shape.borderRadius,
-				':-webkit-autofill': {
+				borderRadius: theme.vars.shape.borderRadius,
+				":-webkit-autofill": {
 					WebkitBoxShadow: `0 0 0 300px ${theme.vars.palette.background.default} inset !important`,
 				},
 			}),
 
 			root: ({ theme }) => ({
-				'::before': {
-					display: 'none',
+				"::before": {
+					display: "none",
 				},
-				'::after': {
-					display: 'none',
+				"::after": {
+					display: "none",
 				},
 
-				'&.Mui-focused': {
+				"&.Mui-focused": {
 					outline: `2px solid ${theme.vars.palette.primary.main}`,
-					backgroundColor: 'transparent',
-					borderColor: 'transparent',
+					backgroundColor: "transparent",
+					borderColor: "transparent",
 				},
-				'borderRadius': theme.vars.shape.borderRadius,
+				borderRadius: theme.vars.shape.borderRadius,
 				// 'backgroundColor': 'transparent',
-				'borderColor': theme.vars.palette.divider,
-				'borderWidth': 1,
-				'borderStyle': 'solid',
+				borderColor: theme.vars.palette.divider,
+				borderWidth: 1,
+				borderStyle: "solid",
 			}),
 		},
 	},
 
 	MuiFormControl: {
 		defaultProps: {
-			variant: 'filled',
+			variant: "filled",
 			fullWidth: true,
 		},
 	},
@@ -67,7 +67,7 @@ export const components: CssVarsThemeOptions['components'] = {
 	MuiButton: {
 		styleOverrides: {
 			root: {
-				fontWeight: 'bold',
+				fontWeight: "bold",
 			},
 		},
 		defaultProps: {
@@ -84,7 +84,7 @@ export const components: CssVarsThemeOptions['components'] = {
 	MuiTypography: {
 		styleOverrides: {
 			body2: {
-				fontWeight: 'normal',
+				fontWeight: "normal",
 			},
 		},
 	},
@@ -92,14 +92,14 @@ export const components: CssVarsThemeOptions['components'] = {
 	MuiCardActionArea: {
 		styleOverrides: {
 			root: {
-				fontFamily: ['Montserrat', 'sans-serif'].join(','),
+				fontFamily: ["Montserrat", "sans-serif"].join(","),
 			},
 		},
 	},
 
 	MuiCard: {
 		defaultProps: {
-			variant: 'outlined',
+			variant: "outlined",
 		},
 	},
 };
