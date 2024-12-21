@@ -9,5 +9,5 @@ export default defineConfig({
 	// 	outDir: 'F:\\codeProject\\MaterialEditPython50\\static',
 	// 	emptyOutDir: true,
 	// },
-	base: "./",
+	// base: "./",
 });
