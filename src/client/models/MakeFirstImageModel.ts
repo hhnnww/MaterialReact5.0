@@ -6,6 +6,7 @@
 import type { ImageModel } from './ImageModel';
 
 export type MakeFirstImageModel = {
+    root_path: string;
     first_image_title: string;
     select_image_list: Array<ImageModel>;
     first_image_style: string;

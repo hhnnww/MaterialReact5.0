@@ -167,13 +167,14 @@ requestBody: RequestMaterialPathActionModel,
 
     /**
      * Make First Image
+     * 制作首图路由.
      * @param requestBody 
-     * @returns any Successful Response
+     * @returns string Successful Response
      * @throws ApiError
      */
     public static makeFirstImageV1MakeFirstImagePost(
 requestBody: MakeFirstImageModel,
-): CancelablePromise<any> {
+): CancelablePromise<Record<string, string>> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/v1/MakeFirstImage',
