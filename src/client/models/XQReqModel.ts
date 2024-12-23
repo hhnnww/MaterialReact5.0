@@ -3,7 +3,9 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type GetMateialIdItem = {
-    material_name: string;
-    page_text: string;
+/**
+ * 请求模型
+ */
+export type XQReqModel = {
+    html: string;
 };

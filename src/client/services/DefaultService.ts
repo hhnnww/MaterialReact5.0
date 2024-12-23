@@ -18,14 +18,42 @@ import type { MakeXQ } from '../models/MakeXQ';
 import type { MaterialDownModel } from '../models/MaterialDownModel';
 import type { MaterialInfo } from '../models/MaterialInfo';
 import type { MaterialMergeModel } from '../models/MaterialMergeModel';
+import type { ReqModel } from '../models/ReqModel';
 import type { RequestMaterialPathActionModel } from '../models/RequestMaterialPathActionModel';
+import type { ResModel } from '../models/ResModel';
+import type { ShopNameModel } from '../models/ShopNameModel';
+import type { UpBaiduModel } from '../models/UpBaiduModel';
+import type { UpBaiduResponseModel } from '../models/UpBaiduResponseModel';
 import type { UpTB } from '../models/UpTB';
+import type { XQReqModel } from '../models/XQReqModel';
+import type { XQResModel } from '../models/XQResModel';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 
 export class DefaultService {
+
+    /**
+     * Route Up To Baiduwangpan
+     * 上传到百度网盘.
+     * @param requestBody 
+     * @returns UpBaiduResponseModel Successful Response
+     * @throws ApiError
+     */
+    public static routeUpToBaiduwangpanUpBaiduwangpanPost(
+requestBody: UpBaiduModel,
+): CancelablePromise<UpBaiduResponseModel> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/up_baiduwangpan',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
 
     /**
      * Get Img
@@ -50,6 +78,13 @@ img: string,
 
     /**
      * Get Thumbnail
+     * 获取缩略图
+ *
+ * Args:
+ * img_path (str): _description_
+ *
+ * Returns:
+ * Response: _description_
      * @param imgPath 
      * @returns any Successful Response
      * @throws ApiError
@@ -71,6 +106,7 @@ imgPath: string,
 
     /**
      * Get Material Info
+     * 获取素材信息路由.
      * @param requestBody 
      * @returns MaterialInfo Successful Response
      * @throws ApiError
@@ -151,6 +187,10 @@ requestBody: MakeFirstImageModel,
 
     /**
      * Material Merge
+     * 素材合并函数
+ *
+ * Args:
+ * item (MaterialMergeModel): _description_
      * @param requestBody 
      * @returns any Successful Response
      * @throws ApiError
@@ -171,6 +211,10 @@ requestBody: MaterialMergeModel,
 
     /**
      * Get Baidu Link
+     * 获取百度网盘连接
+ *
+ * Args:
+ * item (GetBaiduLink): _description_
      * @param requestBody 
      * @returns any Successful Response
      * @throws ApiError
@@ -191,6 +235,10 @@ requestBody: GetBaiduLink,
 
     /**
      * Up Taobao
+     * 上传到淘宝函数
+ *
+ * Args:
+ * item (UpTB): _description_
      * @param requestBody 
      * @returns any Successful Response
      * @throws ApiError
@@ -211,6 +259,7 @@ requestBody: UpTB,
 
     /**
      * Make All Xq
+     * 制作所有淘宝详情.
      * @param requestBody 
      * @returns any Successful Response
      * @throws ApiError
@@ -231,6 +280,7 @@ requestBody: MakeXQ,
 
     /**
      * Auto Upload Baidu
+     * 上传到百度网盘.
      * @param requestBody 
      * @returns any Successful Response
      * @throws ApiError
@@ -271,6 +321,10 @@ requestBody: DownItem,
 
     /**
      * Auto Edit Material
+     * 自动编辑素材
+ *
+ * Args:
+ * item (EditItem): _description_
      * @param requestBody 
      * @returns any Successful Response
      * @throws ApiError
@@ -527,6 +581,61 @@ requestBody: GetBaiduShareLinkItem,
             errors: {
                 422: `Validation Error`,
             },
+        });
+    }
+
+    /**
+     * Fun Make Xq Str
+     * 制作淘宝详情
+     * @param requestBody 
+     * @returns XQResModel Successful Response
+     * @throws ApiError
+     */
+    public static funMakeXqStrChromePluginMakeXqStrPost(
+requestBody: XQReqModel,
+): CancelablePromise<XQResModel> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/chrome_plugin/make_xq_str',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+
+    /**
+     * Fun Scrapy Material
+     * 采集素材函数
+     * @param requestBody 
+     * @returns ResModel Successful Response
+     * @throws ApiError
+     */
+    public static funScrapyMaterialChromePluginScrapyMaterialPost(
+requestBody: ReqModel,
+): CancelablePromise<ResModel> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/chrome_plugin/scrapy_material',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+
+    /**
+     * Fun Get Shop Name Material Site
+     * 获取店铺名列表和素材网站的函数
+     * @returns ShopNameModel Successful Response
+     * @throws ApiError
+     */
+    public static funGetShopNameMaterialSiteChromePluginGetShopNameMaterialSiteGet(): CancelablePromise<ShopNameModel> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/chrome_plugin/get_shop_name_material_site',
         });
     }
 

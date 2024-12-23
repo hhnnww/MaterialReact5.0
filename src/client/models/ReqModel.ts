@@ -4,11 +4,11 @@
 /* eslint-disable */
 
 /**
- * 上传到淘宝模型
- *
- * Args:
- * BaseModel (_type_): _description_
+ * 采集素材请求模型
  */
-export type UpTB = {
-    start_stem: number;
+export type ReqModel = {
+    shop_name: string;
+    material_site: string;
+    url: string;
+    html: string;
 };

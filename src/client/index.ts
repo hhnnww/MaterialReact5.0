@@ -25,8 +25,15 @@ export type { MakeXQ } from './models/MakeXQ';
 export type { MaterialDownModel } from './models/MaterialDownModel';
 export type { MaterialInfo } from './models/MaterialInfo';
 export type { MaterialMergeModel } from './models/MaterialMergeModel';
+export type { ReqModel } from './models/ReqModel';
 export type { RequestMaterialPathActionModel } from './models/RequestMaterialPathActionModel';
+export type { ResModel } from './models/ResModel';
+export type { ShopNameModel } from './models/ShopNameModel';
+export type { UpBaiduModel } from './models/UpBaiduModel';
+export type { UpBaiduResponseModel } from './models/UpBaiduResponseModel';
 export type { UpTB } from './models/UpTB';
 export type { ValidationError } from './models/ValidationError';
+export type { XQReqModel } from './models/XQReqModel';
+export type { XQResModel } from './models/XQResModel';
 
 export { DefaultService } from './services/DefaultService';

@@ -3,6 +3,12 @@
 /* tslint:disable */
 /* eslint-disable */
 
+/**
+ * _summary_
+ *
+ * Args:
+ * BaseModel (_type_): _description_
+ */
 export type EditItem = {
     parent_path: string;
     start_stem: number;

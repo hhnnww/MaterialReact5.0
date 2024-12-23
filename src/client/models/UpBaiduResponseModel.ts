@@ -3,7 +3,6 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type GetMateialIdItem = {
-    material_name: string;
-    page_text: string;
+export type UpBaiduResponseModel = {
+    msg: string;
 };

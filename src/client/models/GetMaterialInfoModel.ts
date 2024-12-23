@@ -3,6 +3,9 @@
 /* tslint:disable */
 /* eslint-disable */
 
+/**
+ * 获取素材信息模型.
+ */
 export type GetMaterialInfoModel = {
     root_path: string;
     preview_num: number;

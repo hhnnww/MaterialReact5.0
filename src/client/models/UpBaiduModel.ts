@@ -3,7 +3,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type GetMateialIdItem = {
-    material_name: string;
-    page_text: string;
+export type UpBaiduModel = {
+    parent_path: string;
+    start_stem: number;
+    end_stem?: number;
 };

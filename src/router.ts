@@ -34,6 +34,10 @@ const router = createBrowserRouter([
 				path: "GetBaiduYunShareLinks",
 				lazy: () => import("./app/page_获取网盘链接"),
 			},
+			{
+				path: "UpBaiDuWangPan",
+				lazy: () => import("./app/page_上传到百度网盘"),
+			},
 		],
 	},
 ]);

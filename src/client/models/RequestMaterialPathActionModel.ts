@@ -3,6 +3,9 @@
 /* tslint:disable */
 /* eslint-disable */
 
+/**
+ * 素材文件夹操作模型.
+ */
 export type RequestMaterialPathActionModel = {
     action: string;
     shop_name: string;

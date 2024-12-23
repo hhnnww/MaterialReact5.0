@@ -3,7 +3,9 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type GetMateialIdItem = {
-    material_name: string;
-    page_text: string;
+/**
+ * 采集素材返回模型
+ */
+export type ResModel = {
+    msg: string;
 };
