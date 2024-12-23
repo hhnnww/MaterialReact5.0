@@ -11,9 +11,7 @@ import { OpenAPI } from "./client";
 import router from "./router";
 import { theme } from "./theme";
 
-if (import.meta.env.MODE === "development") {
-	OpenAPI.BASE = "http://127.0.0.1:8000";
-}
+OpenAPI.BASE = "http://127.0.0.1:8000";
 
 document.title = "超级素材处理程序 5.0";
 
