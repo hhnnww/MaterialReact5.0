@@ -36,7 +36,7 @@ export function Fun_素材列表() {
 										down_store.material_site === "包图"
 												? `http://127.0.0.1:8000/v1/img/get_url?img_url=${item.img}`
 												: down_store.material_site === "享设计"
-													? `${item.img}?x-oss-process=style/prev_w_750_h_auto`
+													? `${item.img}`
 													: `${item.img}`
 									}
 									style={{
