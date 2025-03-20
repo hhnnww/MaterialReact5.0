@@ -133,6 +133,7 @@ export function MaterialPathActionModel() {
 				{ name: "效果图扩大", icon: <EditRoadOutlinedIcon /> },
 				{ name: "效果图webp转png", icon: <EditRoadOutlinedIcon /> },
 				{ name: "eps转ai", icon: <EditRoadOutlinedIcon /> },
+				{ name: "CMYK转RGB", icon: <EditRoadOutlinedIcon /> },
 			],
 		},
 		{
