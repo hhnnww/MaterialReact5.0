@@ -18,7 +18,12 @@ import { useMaterialEditStore } from "./useMaterialEditStore";
 
 type buttonItemList = {
 	color: ButtonGroupOwnProps["color"];
-	list: { name: string; icon: ReactNode; confirm?: boolean }[];
+	list: {
+		name: string;
+		icon: ReactNode;
+		confirm?: boolean;
+		info?: string;
+	}[];
 }[];
 
 export function MaterialPathActionModel() {
@@ -50,6 +55,25 @@ export function MaterialPathActionModel() {
 			color: "primary",
 			list: [
 				{
+					name: "AI文件移动到子目录",
+					icon: <PhotoSizeSelectLargeOutlinedIcon />,
+					info: "把根目录的AI文件移动到子目录",
+				},
+				{
+					name: "删除享设计文件夹结构的预览图",
+					icon: <PhotoSizeSelectLargeOutlinedIcon />,
+					info: "删除享设计文件夹结构的素材文件夹中的预览图",
+				},
+				{
+					name: "删除AI对应的PNG文件",
+					icon: <EditRoadOutlinedIcon />,
+				},
+			],
+		},
+		{
+			color: "primary",
+			list: [
+				{
 					name: "子目录内文件移动到根",
 					icon: <MoveUpOutlinedIcon />,
 				},
@@ -60,10 +84,6 @@ export function MaterialPathActionModel() {
 				{ name: "享设计文件夹重构", icon: <EditRoadOutlinedIcon /> },
 				{
 					name: "AI文件重命名",
-					icon: <EditRoadOutlinedIcon />,
-				},
-				{
-					name: "删除AI对应的PNG文件",
 					icon: <EditRoadOutlinedIcon />,
 				},
 				{
@@ -223,6 +243,7 @@ export function MaterialPathActionModel() {
 								<Button
 									key={item.name}
 									startIcon={item.icon}
+									title={item.info}
 									onClick={async () => {
 										setOpen(false);
 										if (item.confirm) {
