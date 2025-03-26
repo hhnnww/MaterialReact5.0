@@ -179,6 +179,11 @@ export function MaterialPathActionModel() {
 					name: "PSD-导出图片",
 					icon: <AddPhotoAlternateOutlinedIcon />,
 				},
+			],
+		},
+		{
+			color: "primary",
+			list: [
 				{
 					name: "AI-导出图片",
 					icon: <AddPhotoAlternateOutlinedIcon />,
