@@ -18,6 +18,7 @@ export type { GetMateialIdItem } from './models/GetMateialIdItem';
 export type { GetMaterialInfoModel } from './models/GetMaterialInfoModel';
 export type { HTTPValidationError } from './models/HTTPValidationError';
 export type { ImageModel } from './models/ImageModel';
+export type { Item } from './models/Item';
 export type { ItemIn } from './models/ItemIn';
 export { MakeFirstImageModel } from './models/MakeFirstImageModel';
 export { MakeProductImageRequestModel } from './models/MakeProductImageRequestModel';

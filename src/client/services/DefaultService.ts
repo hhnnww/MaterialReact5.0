@@ -11,6 +11,7 @@ import type { GetBaiduLink } from '../models/GetBaiduLink';
 import type { GetBaiduShareLinkItem } from '../models/GetBaiduShareLinkItem';
 import type { GetMateialIdItem } from '../models/GetMateialIdItem';
 import type { GetMaterialInfoModel } from '../models/GetMaterialInfoModel';
+import type { Item } from '../models/Item';
 import type { ItemIn } from '../models/ItemIn';
 import type { MakeFirstImageModel } from '../models/MakeFirstImageModel';
 import type { MakeProductImageRequestModel } from '../models/MakeProductImageRequestModel';
@@ -127,6 +128,7 @@ requestBody: GetMaterialInfoModel,
 
     /**
      * Make Material Product Image
+     * 制作详情
      * @param requestBody 
      * @returns any Successful Response
      * @throws ApiError
@@ -302,6 +304,7 @@ requestBody: BaiduItem,
 
     /**
      * Down Path Move To Material Path
+     * 下载目录移动到素材目录.
      * @param requestBody 
      * @returns any Successful Response
      * @throws ApiError
@@ -496,7 +499,29 @@ imgUrl: string,
     }
 
     /**
+     * Fun Dele Image
+     * 删除指定图片.
+     * @param requestBody 
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    public static funDeleImageV1Post(
+requestBody: Item,
+): CancelablePromise<Record<string, any>> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/v1/删除指定图片',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+
+    /**
      * Open Baidu Link
+     * 打开网盘下载链接.
      * @param requestBody 
      * @returns any Successful Response
      * @throws ApiError
@@ -517,7 +542,8 @@ requestBody: ItemIn,
 
     /**
      * Fun 获取商家编码
-     * 获取千牛和自动发货的商家编码
+     * 获取千牛和自动发货的商家编码.
+ *
  * 千牛的商家编码可以删除仓库中的产品对应的网盘文件
  * 自动发货的商家编码可以用来获取网盘链接
      * @param requestBody 
@@ -608,7 +634,7 @@ requestBody: XQReqModel,
 
     /**
      * Fun Scrapy Material
-     * 采集素材函数
+     * 开始采集素材路由.
      * @param requestBody 
      * @returns ResModel Successful Response
      * @throws ApiError

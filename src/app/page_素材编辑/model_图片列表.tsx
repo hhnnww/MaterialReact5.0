@@ -5,6 +5,7 @@ import RadioButtonCheckedRoundedIcon from "@mui/icons-material/RadioButtonChecke
 import { Box, Button, ButtonGroup, Stack } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { DefaultService } from "~/client";
 import { GridHeader } from "~/component/box";
 import {
 	clearSelect,
@@ -94,6 +95,22 @@ function SingleImage(props: { img_obj: PathObj }) {
 								Math.round((props.img_obj.ratio as number) * 100) / 100
 							).toString()}
 						</Box>
+					</Stack>
+
+					<Stack>
+						<Button
+							onClick={() => {
+								if (confirm("确定删除素材图和预览图吗？") === true) {
+									DefaultService.funDeleImageV1Post({
+										root_path: store.root_path,
+										image_path: props.img_obj.path,
+									});
+								}
+							}}
+							color="error"
+						>
+							删除素材图和预览图
+						</Button>
 					</Stack>
 				</Box>
 			</div>

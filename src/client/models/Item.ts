@@ -3,8 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type ImageModel = {
-    path: string;
-    ratio?: number;
-    is_selected?: boolean;
+export type Item = {
+    image_path: string;
+    root_path: string;
 };
