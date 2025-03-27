@@ -104,6 +104,8 @@ function SingleImage(props: { img_obj: PathObj }) {
 									DefaultService.funDeleImageV1Post({
 										root_path: store.root_path,
 										image_path: props.img_obj.path,
+									}).then((res) => {
+										alert(res.message);
 									});
 								}
 							}}
