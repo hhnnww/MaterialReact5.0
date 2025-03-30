@@ -46,7 +46,7 @@ export const useMaterialEditStore = create(
 			first_image_line: 3,
 			crop_position: "center",
 			first_image_num: "1",
-			spacing: 10,
+			spacing: 5,
 
 			bg_color: "255 255 255 255",
 			out_space: 0,
