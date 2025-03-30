@@ -33,6 +33,7 @@ export function FirstImageModel() {
 							});
 						}}
 						label="首图标题"
+						autoComplete="off"
 					/>
 				</Grid2>
 
