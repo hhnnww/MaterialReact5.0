@@ -124,6 +124,7 @@ export function FirstImageModel() {
 								"1-2-3",
 								"1-2-3-3",
 								"1-2-3-3-3",
+								"1-2-3-3-3-3",
 								"S1-2",
 								"S1-3",
 								"1大2行2列",
@@ -179,8 +180,8 @@ export function FirstImageModel() {
 							}
 						>
 							<MenuItem value={0}>无间距</MenuItem>
-							<MenuItem value={10}>包含间距</MenuItem>
-							<MenuItem value={20}>大间距</MenuItem>
+							<MenuItem value={5}>包含间距-5</MenuItem>
+							<MenuItem value={20}>大间距-20</MenuItem>
 						</Select>
 					</FormControl>
 				</Grid2>
