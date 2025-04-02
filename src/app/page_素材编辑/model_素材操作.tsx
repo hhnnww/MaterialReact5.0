@@ -230,6 +230,11 @@ export function MaterialPathActionModel() {
 					icon: <ImageNotSupportedOutlinedIcon />,
 					confirm: true,
 				},
+				{
+					name: "删除预览小图",
+					icon: <ImageNotSupportedOutlinedIcon />,
+					confirm: true,
+				},
 			],
 		},
 	];
