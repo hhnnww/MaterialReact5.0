@@ -64,6 +64,7 @@ export const useMaterialEditStore = create(
 			crop_position: "start",
 			xq_width: 1500,
 			has_water: 1,
+			effect_has_watermark: 1,
 		},
 	})),
 );

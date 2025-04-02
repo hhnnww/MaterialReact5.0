@@ -154,6 +154,25 @@ export function ProductImageModel() {
 					/>
 				</Grid2>
 
+				<Grid2 xs={2}>
+					<FormControl>
+						<InputLabel>效果图水印</InputLabel>
+						<Select
+							label="效果图水印"
+							value={store.product_image_set.effect_has_watermark}
+							onChange={(event) =>
+								useMaterialEditStore.setState((state) => {
+									state.product_image_set.effect_has_watermark = event.target
+										.value as number;
+								})
+							}
+						>
+							<MenuItem value={1}>添加水印</MenuItem>
+							<MenuItem value={0}>无水印</MenuItem>
+						</Select>
+					</FormControl>
+				</Grid2>
+
 				<Grid2 xs={12}>
 					<MakeProductImageButton />
 				</Grid2>
@@ -193,6 +212,8 @@ function MakeProductImageButton() {
 							shop_name: store.shop_name,
 							xq_width: store.product_image_set.xq_width,
 							has_water: store.product_image_set.has_water,
+							effect_has_watermark:
+								store.product_image_set.effect_has_watermark === 1,
 						},
 					);
 				}}

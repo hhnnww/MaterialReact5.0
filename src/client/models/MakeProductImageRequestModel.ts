@@ -20,6 +20,7 @@ export type MakeProductImageRequestModel = {
     preview_used_number: number;
     preview_has_material_info: number;
     preview_image_count: number;
+    effect_has_watermark: boolean;
     crop_position: MakeProductImageRequestModel.crop_position;
     xq_width: number;
     image_name_has_material_id?: boolean;
