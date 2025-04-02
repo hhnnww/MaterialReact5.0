@@ -48,7 +48,7 @@ export const useMaterialEditStore = create(
 			first_image_num: "1",
 			spacing: 5,
 
-			bg_color: "255 255 255 255",
+			bg_color: "FFFFFF",
 			out_space: 0,
 		},
 
