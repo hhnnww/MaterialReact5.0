@@ -25,6 +25,7 @@ export const useAppStore = create(
 			"轨迹",
 			"t500",
 			"芒果",
+			"唐峰",
 		],
 	})),
 );
