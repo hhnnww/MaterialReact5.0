@@ -181,6 +181,7 @@ export function FirstImageModel() {
 							}
 						>
 							<MenuItem value={0}>无间距</MenuItem>
+							<MenuItem value={3}>小间距-3</MenuItem>
 							<MenuItem value={5}>包含间距-5</MenuItem>
 							<MenuItem value={20}>大间距-20</MenuItem>
 						</Select>
