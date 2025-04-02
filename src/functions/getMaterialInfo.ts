@@ -27,6 +27,7 @@ export async function get_material_info() {
 		state.material_info.effect_image_list = [];
 		state.material_info.preview_image_list = [];
 		state.selected_image = [];
+		state.first_image_set.bg_color = "FFFFFF";
 		for (const store_key in state.material_info) {
 			for (const res_key in response) {
 				if (store_key === res_key) {
@@ -49,7 +50,6 @@ export async function get_material_info() {
 		});
 
 		state.first_image_set.first_image_title = `${state.material_info.material_source_file_count.toString()}套 `;
-		state.first_image_set.bg_color = "FFFFFF";
 
 		let ma_format_title = state.material_info.material_source_format_title;
 		ma_format_title = ma_format_title.replace(/\s*/g, "");
