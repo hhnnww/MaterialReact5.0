@@ -49,7 +49,7 @@ export async function get_material_info() {
 			// state.material_info.effect_image_list[index].ratio = 0;
 		});
 
-		state.first_image_set.first_image_title = `${state.material_info.material_source_file_count.toString()}套 `;
+		state.first_image_set.first_image_title = `${state.material_info.material_source_file_count.toString()}款 `;
 
 		let ma_format_title = state.material_info.material_source_format_title;
 		ma_format_title = ma_format_title.replace(/\s*/g, "");
