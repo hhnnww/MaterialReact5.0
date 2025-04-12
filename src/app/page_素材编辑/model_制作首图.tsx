@@ -149,7 +149,26 @@ export function FirstImageModel() {
 						</Select>
 					</FormControl>
 				</Grid2>
-
+				<Grid2 xs={2}>
+					<FormControl>
+						<InputLabel>首图缩放方式</InputLabel>
+						<Select
+							label="首图缩放方式"
+							value={store.first_image_set.first_image_layout}
+							onChange={(event) =>
+								useMaterialEditStore.setState((state) => {
+									state.first_image_set.first_image_layout = event.target.value;
+								})
+							}
+						>
+							{["裁剪", "缩放"].map((item) => (
+								<MenuItem key={item} value={item}>
+									{item}
+								</MenuItem>
+							))}
+						</Select>
+					</FormControl>
+				</Grid2>
 				<Grid2 xs={2}>
 					<FormControl>
 						<InputLabel>首图裁剪方式</InputLabel>
@@ -276,6 +295,7 @@ export function FirstImageModel() {
 								source_count:
 									store.material_info.material_source_file_count.toString(),
 								out_space: store.first_image_set.out_space,
+								first_image_resize: store.first_image_set.first_image_resize,
 							});
 						}}
 						variant="contained"

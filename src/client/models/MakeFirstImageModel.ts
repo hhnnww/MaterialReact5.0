@@ -10,6 +10,7 @@ export type MakeFirstImageModel = {
     first_image_title: string;
     select_image_list: Array<ImageModel>;
     first_image_style: string;
+    first_image_resize: string;
     first_image_line: number;
     first_image_layout: string;
     crop_position: MakeFirstImageModel.crop_position;

@@ -43,6 +43,7 @@ export const useMaterialEditStore = create(
 
 			first_image_style: "黑鲸",
 			first_image_layout: "固定裁剪",
+			first_image_resize: "缩放",
 			first_image_line: 3,
 			crop_position: "center",
 			first_image_num: "1",
