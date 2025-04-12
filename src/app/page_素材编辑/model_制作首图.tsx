@@ -154,10 +154,10 @@ export function FirstImageModel() {
 						<InputLabel>首图缩放方式</InputLabel>
 						<Select
 							label="首图缩放方式"
-							value={store.first_image_set.first_image_layout}
+							value={store.first_image_set.first_image_resize}
 							onChange={(event) =>
 								useMaterialEditStore.setState((state) => {
-									state.first_image_set.first_image_layout = event.target.value;
+									state.first_image_set.first_image_resize = event.target.value;
 								})
 							}
 						>
