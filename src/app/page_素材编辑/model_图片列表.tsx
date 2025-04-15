@@ -97,22 +97,36 @@ function SingleImage(props: { img_obj: PathObj }) {
 						</Box>
 					</Stack>
 
-					<Stack>
-						<Button
-							onClick={() => {
-								if (confirm("确定删除素材图和预览图吗？") === true) {
-									DefaultService.funDeleImageV1Post({
-										root_path: store.root_path,
-										image_path: props.img_obj.path,
-									}).then((res) => {
-										alert(res.message);
-									});
-								}
-							}}
-							color="error"
-						>
-							删除素材图和预览图
-						</Button>
+					<Stack spacing={1} px={2.5} pt={2}>
+						<Box>
+							<Button
+								onClick={() => {
+									if (confirm("确定删除素材图和预览图吗？") === true) {
+										DefaultService.funDeleImageV1Post({
+											root_path: store.root_path,
+											image_path: props.img_obj.path,
+										}).then((res) => {
+											if (res) {
+												useMaterialEditStore.setState((state) => {
+													state.material_info.effect_image_list =
+														state.material_info.effect_image_list.filter(
+															(item) => item.path !== props.img_obj.path,
+														);
+													state.material_info.preview_image_list =
+														state.material_info.preview_image_list.filter(
+															(item) => item.path !== props.img_obj.path,
+														);
+												});
+											}
+										});
+									}
+								}}
+								color="error"
+								variant="contained"
+							>
+								删除素材图和预览图
+							</Button>
+						</Box>
 					</Stack>
 				</Box>
 			</div>
