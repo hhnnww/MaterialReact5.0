@@ -1,8 +1,8 @@
 import {
-	PathObj,
+	type PathObj,
 	useMaterialEditStore,
-} from '~/app/page_素材编辑/useMaterialEditStore';
-import Path from './pathlib';
+} from "~/app/page_素材编辑/useMaterialEditStore";
+import Path from "./pathlib";
 
 /* 
 根据图片尺寸排序
@@ -10,24 +10,22 @@ import Path from './pathlib';
 export function sortAllImageBySize(sort_by: boolean) {
 	// getAllImageRatio();
 	useMaterialEditStore.setState((state) => {
-		state.material_info.effect_image_list.sort(function (a, b) {
+		state.material_info.effect_image_list.sort((a, b) => {
 			if (a.ratio && b.ratio) {
 				if (sort_by === true) {
 					return a.ratio - b.ratio;
-				} else {
-					return b.ratio - a.ratio;
 				}
+				return b.ratio - a.ratio;
 			}
 			return 0;
 		});
 
-		state.material_info.preview_image_list.sort(function (a, b) {
+		state.material_info.preview_image_list.sort((a, b) => {
 			if (a.ratio && b.ratio) {
 				if (sort_by === true) {
 					return a.ratio - b.ratio;
-				} else {
-					return b.ratio - a.ratio;
 				}
+				return b.ratio - a.ratio;
 			}
 			return 0;
 		});
@@ -59,20 +57,18 @@ export function sortAllImageBySize(sort_by: boolean) {
 */
 export function sortAllImageByNmae(sort_by: boolean) {
 	useMaterialEditStore.setState((state) => {
-		state.material_info.effect_image_list.sort(function (a, b) {
+		state.material_info.effect_image_list.sort((a, b) => {
 			if (sort_by === true) {
 				return new Path(a.path).num - new Path(b.path).num;
-			} else {
-				return new Path(b.path).num - new Path(a.path).num;
 			}
+			return new Path(b.path).num - new Path(a.path).num;
 		});
 
-		state.material_info.preview_image_list.sort(function (a, b) {
+		state.material_info.preview_image_list.sort((a, b) => {
 			if (sort_by === true) {
 				return new Path(a.path).num - new Path(b.path).num;
-			} else {
-				return new Path(b.path).num - new Path(a.path).num;
 			}
+			return new Path(b.path).num - new Path(a.path).num;
 		});
 	});
 }
@@ -129,15 +125,13 @@ export function selectSingleImage(img_obj: PathObj) {
 
 			state.material_info.preview_image_list.map((item, index) => {
 				if (item.path === img_obj.path) {
-					state.material_info.preview_image_list[index].isSelected =
-						true;
+					state.material_info.preview_image_list[index].isSelected = true;
 				}
 			});
 
 			state.material_info.effect_image_list.map((item, index) => {
 				if (item.path === img_obj.path) {
-					state.material_info.effect_image_list[index].isSelected =
-						true;
+					state.material_info.effect_image_list[index].isSelected = true;
 				}
 			});
 		} else {
@@ -147,17 +141,13 @@ export function selectSingleImage(img_obj: PathObj) {
 				}
 				state.material_info.preview_image_list.map((item, index) => {
 					if (item.path === img_obj.path) {
-						state.material_info.preview_image_list[
-							index
-						].isSelected = false;
+						state.material_info.preview_image_list[index].isSelected = false;
 					}
 				});
 
 				state.material_info.effect_image_list.map((item, index) => {
 					if (item.path === img_obj.path) {
-						state.material_info.effect_image_list[
-							index
-						].isSelected = false;
+						state.material_info.effect_image_list[index].isSelected = false;
 					}
 				});
 			});
@@ -171,7 +161,7 @@ export function selectSingleImage(img_obj: PathObj) {
 export function getImageRatio(img_obj: PathObj) {
 	const img = new Image();
 	img.src = useMaterialEditStore.getState().img_server_url + img_obj.path;
-	img.onload = function () {
+	img.onload = () => {
 		useMaterialEditStore.setState((state) => {
 			state.material_info.preview_image_list.map((item, index) => {
 				if (item.path === img_obj.path) {
