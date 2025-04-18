@@ -23,6 +23,7 @@ export type MakeFirstImageModel = {
     source_count: string;
     bg_color: string;
     out_space: number;
+    radio: number;
 };
 
 export namespace MakeFirstImageModel {

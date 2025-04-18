@@ -264,6 +264,25 @@ export function FirstImageModel() {
 					</FormControl>
 				</Grid2>
 
+				<Grid2 xs={2}>
+					<FormControl>
+						<InputLabel>圆角</InputLabel>
+						<Select
+							label="圆角"
+							value={store.first_image_set.out_space}
+							onChange={(event) =>
+								useMaterialEditStore.setState((state) => {
+									state.first_image_set.radio = event.target.value as number;
+								})
+							}
+							type="number"
+						>
+							<MenuItem value={1}>包含</MenuItem>
+							<MenuItem value={0}>不包含</MenuItem>
+						</Select>
+					</FormControl>
+				</Grid2>
+
 				<Grid2 xs={12}>
 					<Button
 						onClick={async () => {
@@ -298,6 +317,7 @@ export function FirstImageModel() {
 									store.material_info.material_source_file_count.toString(),
 								out_space: store.first_image_set.out_space,
 								first_image_resize: store.first_image_set.first_image_resize,
+								radio: store.first_image_set.radio,
 							});
 						}}
 						variant="contained"

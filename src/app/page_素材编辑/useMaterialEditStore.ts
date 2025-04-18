@@ -51,6 +51,7 @@ export const useMaterialEditStore = create(
 
 			bg_color: "FFFFFF",
 			out_space: 0,
+			radio: 0,
 		},
 
 		product_image_set: {
