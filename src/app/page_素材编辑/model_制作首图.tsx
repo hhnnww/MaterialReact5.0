@@ -269,7 +269,7 @@ export function FirstImageModel() {
 						<InputLabel>圆角</InputLabel>
 						<Select
 							label="圆角"
-							value={store.first_image_set.out_space}
+							value={store.first_image_set.radio}
 							onChange={(event) =>
 								useMaterialEditStore.setState((state) => {
 									state.first_image_set.radio = event.target.value as number;
