@@ -101,6 +101,7 @@ export function FirstImageModel() {
 						>
 							{[
 								"固定裁剪",
+								"固定裁剪-圆角",
 								"自适应裁剪",
 								"列-自适应",
 								"列-固定尺寸",
