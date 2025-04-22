@@ -11,21 +11,21 @@ export function sortAllImageBySize(sort_by: boolean) {
 	// getAllImageRatio();
 	useMaterialEditStore.setState((state) => {
 		state.material_info.effect_image_list.sort((a, b) => {
-			if (a.ratio && b.ratio) {
+			if (a.radio && b.radio) {
 				if (sort_by === true) {
-					return a.ratio - b.ratio;
+					return a.radio - b.radio;
 				}
-				return b.ratio - a.ratio;
+				return b.radio - a.radio;
 			}
 			return 0;
 		});
 
 		state.material_info.preview_image_list.sort((a, b) => {
-			if (a.ratio && b.ratio) {
+			if (a.radio && b.radio) {
 				if (sort_by === true) {
-					return a.ratio - b.ratio;
+					return a.radio - b.radio;
 				}
-				return b.ratio - a.ratio;
+				return b.radio - a.radio;
 			}
 			return 0;
 		});
@@ -153,29 +153,4 @@ export function selectSingleImage(img_obj: PathObj) {
 			});
 		}
 	});
-}
-
-/* 
-图片加载宽高比例
-*/
-export function getImageRatio(img_obj: PathObj) {
-	const img = new Image();
-	img.src = useMaterialEditStore.getState().img_server_url + img_obj.path;
-	img.onload = () => {
-		useMaterialEditStore.setState((state) => {
-			state.material_info.preview_image_list.map((item, index) => {
-				if (item.path === img_obj.path) {
-					state.material_info.preview_image_list[index].ratio =
-						img.width / img.height;
-				}
-			});
-
-			state.material_info.effect_image_list.map((item, index) => {
-				if (item.path === img_obj.path) {
-					state.material_info.effect_image_list[index].ratio =
-						img.width / img.height;
-				}
-			});
-		});
-	};
 }
