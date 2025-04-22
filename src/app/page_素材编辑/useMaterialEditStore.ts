@@ -4,7 +4,7 @@ import { immer } from "zustand/middleware/immer";
 
 export interface PathObj {
 	path: string;
-	ratio?: number | undefined;
+	radio?: number | undefined;
 	isSelected?: boolean | undefined;
 }
 

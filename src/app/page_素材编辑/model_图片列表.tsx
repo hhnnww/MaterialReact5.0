@@ -9,7 +9,6 @@ import { DefaultService } from "~/client";
 import { GridHeader } from "~/component/box";
 import {
 	clearSelect,
-	getImageRatio,
 	selectAllImage,
 	selectSingleImage,
 	sortAllImageByNmae,
@@ -74,7 +73,6 @@ function SingleImage(props: { img_obj: PathObj }) {
 					})}
 				>
 					<LazyLoadImage
-						onLoad={() => getImageRatio(props.img_obj)}
 						onClick={() => selectSingleImage(props.img_obj)}
 						src={store.img_server_url + props.img_obj.path}
 						placeholderSrc={""}
@@ -90,11 +88,7 @@ function SingleImage(props: { img_obj: PathObj }) {
 						spacing={1}
 					>
 						<Box>{props.img_obj.path}</Box>
-						<Box>
-							{(
-								Math.round((props.img_obj.ratio as number) * 100) / 100
-							).toString()}
-						</Box>
+						<Box>{props.img_obj.radio}</Box>
 					</Stack>
 
 					<Stack spacing={1} px={2.5} pt={2}>
