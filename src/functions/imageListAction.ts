@@ -32,26 +32,6 @@ export function sortAllImageBySize(sort_by: boolean) {
 	});
 }
 
-// export function getAllImageRatio() {
-// 	useMaterialEditStore.setState((state) => {
-// 		state.material_info.preview_image_list.map((item, index) => {
-// 			const img = new Image();
-// 			img.src = state.img_server_url + item.path;
-
-// 			state.material_info.preview_image_list[index].ratio =
-// 				img.width / img.height;
-// 		});
-
-// 		state.material_info.effect_image_list.map((item, index) => {
-// 			const img = new Image();
-// 			img.src = state.img_server_url + item.path;
-
-// 			state.material_info.effect_image_list[index].ratio =
-// 				img.width / img.height;
-// 		});
-// 	});
-// }
-
 /* 
 根据图片名称排序
 */

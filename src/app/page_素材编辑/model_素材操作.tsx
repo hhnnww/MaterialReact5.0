@@ -164,6 +164,10 @@ export function MaterialPathActionModel() {
 					icon: <AddPhotoAlternateOutlinedIcon />,
 				},
 				{
+					name: "PSD-图层名删除广告-导出图片-添加广告",
+					icon: <AddPhotoAlternateOutlinedIcon />,
+				},
+				{
 					name: "PSD-图层改名-导出图片-添加广告",
 					icon: <AddPhotoAlternateOutlinedIcon />,
 				},
