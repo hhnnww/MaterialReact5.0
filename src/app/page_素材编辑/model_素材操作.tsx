@@ -60,6 +60,11 @@ export function MaterialPathActionModel() {
 					info: "把根目录的AI文件移动到子目录",
 				},
 				{
+					name: "PSD文件移动到子目录",
+					icon: <PhotoSizeSelectLargeOutlinedIcon />,
+					info: "把根目录的PSD文件移动到子目录",
+				},
+				{
 					name: "删除享设计文件夹结构的预览图",
 					icon: <PhotoSizeSelectLargeOutlinedIcon />,
 					info: "删除享设计文件夹结构的素材文件夹中的预览图",
