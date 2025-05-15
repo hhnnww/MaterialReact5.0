@@ -164,6 +164,11 @@ export function MaterialPathActionModel() {
 		},
 		{
 			color: "primary",
+			list: [{ name: "制作版权图片", icon: <EditRoadOutlinedIcon /> }],
+		},
+
+		{
+			color: "primary",
 			list: [
 				{
 					name: "PSD-删除广告-导出图片-添加广告",
