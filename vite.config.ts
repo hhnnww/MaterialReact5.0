@@ -7,7 +7,7 @@ export default defineConfig({
 	plugins: [react(), ViteAliases()],
 	build: {
 		// outDir: "F:\\codeProject\\MaterialEditPython50\\static",
-		emptyOutDir: true,
+		// emptyOutDir: true,
 	},
 	base: "./",
 });

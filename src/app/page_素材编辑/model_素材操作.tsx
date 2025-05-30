@@ -166,7 +166,6 @@ export function MaterialPathActionModel() {
 			color: "primary",
 			list: [{ name: "制作版权图片", icon: <EditRoadOutlinedIcon /> }],
 		},
-
 		{
 			color: "primary",
 			list: [
