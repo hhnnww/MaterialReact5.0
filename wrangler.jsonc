@@ -1,5 +1,6 @@
 {
-    "name": "worker-name",
+    "name": "materail-react",
+    "compatibility_date":"2025-05-30",
     "assets": {
         "directory": "./dist"
     }
