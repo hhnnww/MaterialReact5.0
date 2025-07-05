@@ -49,7 +49,7 @@ export const components: CssVarsThemeOptions["components"] = {
 					borderColor: "transparent",
 				},
 				borderRadius: theme.vars.shape.borderRadius,
-				// 'backgroundColor': 'transparent',
+				backgroundColor: 'transparent',
 				borderColor: theme.vars.palette.divider,
 				borderWidth: 1,
 				borderStyle: "solid",

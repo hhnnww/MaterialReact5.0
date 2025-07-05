@@ -13,7 +13,7 @@ import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { type ReactNode, useState } from "react";
 import { DefaultService } from "~/client";
 import { GridHeader } from "~/component/box";
-import { get_material_info } from "~functions/getMaterialInfo";
+import { get_material_info } from "~/functions/getMaterialInfo";
 import { useMaterialEditStore } from "./useMaterialEditStore";
 
 type buttonItemList = {
@@ -256,38 +256,21 @@ export function MaterialPathActionModel() {
 	const [open, setOpen] = useState(false);
 	const [mess, setMess] = useState("");
 	return (
-		<>
-			<Grid2 container spacing={2}>
-				<GridHeader title="文件夹操作" />
+		<Grid2 container spacing={2}>
+			<GridHeader title="文件夹操作" />
 
-				{buttonList.map((line_item) => (
-					<Grid2 key={line_item.color} xs={12}>
-						<ButtonGroup color={line_item.color} variant="contained">
-							{line_item.list.map((item) => (
-								<Button
-									key={item.name}
-									startIcon={item.icon}
-									title={item.info}
-									onClick={async () => {
-										setOpen(false);
-										if (item.confirm) {
-											if (confirm("确定要操作吗?") === true) {
-												await DefaultService.materialPathActionV1MaterialPathActionPost(
-													{
-														action: item.name,
-														root_path: store.root_path,
-														shop_name: store.shop_name,
-
-														file_start_stem:
-															store.material_info.file_start_stem,
-														path_start_stem:
-															store.material_info.path_start_stem,
-													},
-												);
-
-												await get_material_info();
-											}
-										} else {
+			{buttonList.map((line_item) => (
+				<Grid2 key={line_item.color} xs={12}>
+					<ButtonGroup color={line_item.color} variant="contained">
+						{line_item.list.map((item) => (
+							<Button
+								key={item.name}
+								startIcon={item.icon}
+								title={item.info}
+								onClick={async () => {
+									setOpen(false);
+									if (item.confirm) {
+										if (confirm("确定要操作吗?") === true) {
 											await DefaultService.materialPathActionV1MaterialPathActionPost(
 												{
 													action: item.name,
@@ -301,23 +284,36 @@ export function MaterialPathActionModel() {
 
 											await get_material_info();
 										}
+									} else {
+										await DefaultService.materialPathActionV1MaterialPathActionPost(
+											{
+												action: item.name,
+												root_path: store.root_path,
+												shop_name: store.shop_name,
 
-										setMess(`${item.name}成功`);
-										setOpen(true);
-									}}
-								>
-									{item.name}
-								</Button>
-							))}
-						</ButtonGroup>
-						<Snackbar sx={{ width: "100%" }} open={open} autoHideDuration={0}>
-							<Alert sx={{ width: "100%" }} severity="success">
-								{mess}
-							</Alert>
-						</Snackbar>
-					</Grid2>
-				))}
-			</Grid2>
-		</>
+												file_start_stem: store.material_info.file_start_stem,
+												path_start_stem: store.material_info.path_start_stem,
+											},
+										);
+
+										await get_material_info();
+									}
+
+									setMess(`${item.name}成功`);
+									setOpen(true);
+								}}
+							>
+								{item.name}
+							</Button>
+						))}
+					</ButtonGroup>
+					<Snackbar sx={{ width: "100%" }} open={open} autoHideDuration={0}>
+						<Alert sx={{ width: "100%" }} severity="success">
+							{mess}
+						</Alert>
+					</Snackbar>
+				</Grid2>
+			))}
+		</Grid2>
 	);
 }

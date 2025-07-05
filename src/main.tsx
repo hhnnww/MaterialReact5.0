@@ -3,7 +3,6 @@ import "@fontsource/montserrat/500.css";
 import "@fontsource/montserrat/700.css";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/styles";
-import type { } from "@mui/material/themeCssVarsAugmentation";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
@@ -12,13 +11,7 @@ import router from "./router";
 import { theme } from "./theme";
 
 OpenAPI.BASE = "http://127.0.0.1:8000";
-
 document.title = "超级素材处理程序 5.0";
-
-localStorage.setItem("mui-mode", "dark");
-localStorage.setItem("mui-color-scheme-light", "dark");
-localStorage.setItem("mui-color-scheme-dark", "dark");
-
 const root_element = document.getElementById("root");
 
 if (root_element !== null) {
@@ -26,8 +19,8 @@ if (root_element !== null) {
 		<React.StrictMode>
 			<CssVarsProvider
 				theme={theme}
-				defaultMode="dark"
 				defaultColorScheme={"dark"}
+				defaultMode="dark"
 			>
 				<CssBaseline />
 				<RouterProvider router={router} />

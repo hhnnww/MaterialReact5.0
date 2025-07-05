@@ -1,27 +1,27 @@
-import { Button, TextField } from '@mui/material';
-import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
-import { useRef } from 'react';
-import { DefaultService } from '~/client';
+import { Button, TextField } from "@mui/material";
+import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+import { useRef } from "react";
+import { DefaultService } from "~/client";
 
 export function Component() {
 	const content_list = [
 		{
-			name: '浏览器请求HEADER',
-			help_text: '创建分享的浏览器请求',
+			name: "浏览器请求HEADER",
+			help_text: "创建分享的浏览器请求",
 			ref: useRef<HTMLTextAreaElement>(null),
-			default: '',
+			default: "",
 		},
 		{
-			name: '自动发货页面本文',
-			help_text: '在自动发货中需要添加地址的产品页面本文',
+			name: "自动发货页面本文",
+			help_text: "在自动发货中需要添加地址的产品页面本文",
 			ref: useRef<HTMLTextAreaElement>(null),
-			default: '',
+			default: "",
 		},
 		{
-			name: '文件列表JSON',
-			help_text: '百度网盘文件列表请求中返回的JSON',
+			name: "文件列表JSON",
+			help_text: "百度网盘文件列表请求中返回的JSON",
 			ref: useRef<HTMLTextAreaElement>(null),
-			default: '[]',
+			default: "[]",
 		},
 	];
 
@@ -43,18 +43,13 @@ export function Component() {
 
 			<Grid2 xs={12}>
 				<Button
-					variant='contained'
+					variant="contained"
 					onClick={() =>
-						DefaultService.funBaiduyunDelShareRequestGetBaiduShareLinkPost(
-							{
-								file_list_json: content_list[2].ref.current
-									?.value as string,
-								header: content_list[0].ref.current
-									?.value as string,
-								maid_list: content_list[1].ref.current
-									?.value as string,
-							},
-						).then((res) => {
+						DefaultService.funBaiduyunDelShareRequestGetBaiduShareLinkPost({
+							file_list_json: content_list[2].ref.current?.value as string,
+							header: content_list[0].ref.current?.value as string,
+							maid_list: content_list[1].ref.current?.value as string,
+						}).then((res) => {
 							console.log(res);
 						})
 					}

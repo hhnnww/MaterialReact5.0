@@ -9,13 +9,4 @@ export const extendColorSchemes: CssVarsThemeOptions["colorSchemes"] = {
 			},
 		},
 	},
-
-	light: {
-		palette: {
-			primary: {
-				main: "rgb(41, 112, 255)",
-				dark: "rgb(0, 78, 235)",
-			},
-		},
-	},
 };

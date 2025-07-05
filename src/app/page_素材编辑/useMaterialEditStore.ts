@@ -1,4 +1,3 @@
-import { mountStoreDevtool } from "simple-zustand-devtools";
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
@@ -70,7 +69,3 @@ export const useMaterialEditStore = create(
 		},
 	})),
 );
-
-if (import.meta.env.MODE === "development") {
-	mountStoreDevtool("materialEditStore", useMaterialEditStore);
-}

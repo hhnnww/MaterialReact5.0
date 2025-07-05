@@ -8,4 +8,5 @@ export const theme = extendTheme({
 	typography: extendTypography,
 	components: components,
 	shape: { borderRadius: 12 },
+	
 });
